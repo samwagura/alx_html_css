@@ -1,12 +1,13 @@
-/* styles.css */
+/* =====================
+   FLEXBOX LAYOUT
+===================== */
 
 /* Make body a flex container with vertical stacking */
 body {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* full viewport height */
+  min-height: 100vh;
   margin: 0;
-  font-family: Arial, sans-serif;
 }
 
 /* Main should flex (grow) between header and footer */
@@ -21,36 +22,85 @@ main {
 article {
   flex: 2;
   overflow-y: auto;
-  padding: 1rem;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 /* Aside takes 1/3 of width */
 aside {
   flex: 1;
   overflow-y: auto;
-  padding: 1rem;
-  background: #f5f5f5; /* just to distinguish visually */
+  padding: 2rem;
+  background: #f9fafb;
+  border-left: 3px solid #1e3a8a;
 }
 
-/* Header & footer styling */
-header,
-footer {
-  padding: 1rem;
-  background: #222;
+/* =====================
+   HEADER & NAVIGATION
+===================== */
+header {
+  background: linear-gradient(to right, #0a0f2c, #1e3a8a);
   color: #fff;
+  padding: 20px;
+  border-bottom: none;
 }
-
-/* Optional: basic reset for lists in header nav */
 header ul {
   list-style: none;
+  margin: 0;
+  padding: 0;
   display: flex;
   gap: 1rem;
-  padding: 0;
-  margin: 0;
+  align-items: center;
 }
-
+header li.logo {
+  font-size: 36px;
+}
 header a {
   color: #fff;
   text-decoration: none;
+  font-weight: bold;
+}
+header a:hover {
+  color: #ffd700; /* gold hover effect */
 }
 
+/* =====================
+   FOOTER
+===================== */
+footer {
+  background: #0a0f2c;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  padding: 10px;
+}
+
+/* =====================
+   ARTICLE CONTENT
+===================== */
+article h1, article h2 {
+  color: #1e3a8a;
+}
+video {
+  border: 2px solid #1e3a8a;
+  border-radius: 8px;
+  margin-top: 1rem;
+  max-width: 100%;
+}
+.twitter-tweet {
+  margin: 20px auto;
+}
+
+/* =====================
+   RESPONSIVE BEHAVIOR
+   (keeps using base.css rules with .works_on_smartphone)
+===================== */
+@media (max-width: 800px) {
+  article, aside {
+    box-shadow: none;
+    border: none;
+    padding: 1rem;
+  }
+}
