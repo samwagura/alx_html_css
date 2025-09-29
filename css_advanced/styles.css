@@ -1,1 +1,291 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+/* Header Styles */
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 20px 0;
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+}
+
+nav img {
+    height: 35px;
+    width: auto;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 1px;
+    transition: opacity 0.3s ease;
+}
+
+nav ul li a:hover {
+    opacity: 0.8;
+}
+
+/* Main Content */
+main {
+    margin: 0;
+    padding: 0;
+}
+
+/* First Section - Hero Section */
+main section:first-child {
+    background: url('Object.png');
+    background-size: cover;
+    background-position: center 20%;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 150px;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+/* Radial gradient overlay - extends to cover the entire section */
+main section:first-child::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at center, rgba(41, 48, 61, 0.01) 0%, rgba(7, 22, 41, 0.8) 50%, rgba(7, 22, 41, 1) 90%);
+    z-index: 1;
+}
+
+/* Ensure content is above the gradient */
+main section:first-child > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* First div inside first section - Hero Content */
+main section:first-child > div:first-child {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+main section:first-child h1 {
+    font-size: 120px;
+    font-weight: 700;
+    line-height: 100%;
+    margin-bottom: 30px;
+}
+
+main section:first-child span {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    margin: 0 30px;
+}
+
+main section:first-child button {
+    background: #C271FF;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 20px 0 rgba(194, 113, 255, 0.5);
+    margin-top: 30px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+main section:first-child button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 25px 0 rgba(194, 113, 255, 0.6);
+}
+
+/* Second div inside first section - Learn from the pros */
+main section:first-child > div:nth-child(2) {
+    background: transparent;
+    padding: 60px 20px 40px;
+    text-align: center;
+    width: 100%;
+    position: static;
+    z-index: 2;
+    margin-top: 60px;
+}
+
+main section:first-child > div:nth-child(2) h2 {
+    font-size: 0;
+    font-weight: 300;
+    margin-bottom: 60px;
+    letter-spacing: 0px;
+    line-height: 100%;
+}
+
+/* Style for "Learn" - bold and purple */
+main section:first-child > div:nth-child(2) h2 span {
+    font-size: 32px;
+    line-height: 100%;
+}
+
+main section:first-child > div:nth-child(2) h2 .learn {
+    font-weight: 700;
+    color: #C271FF;
+}
+
+/* Style for "from the pros" - normal weight and white */
+main section:first-child > div:nth-child(2) h2 .from-pros {
+    font-weight: 300;
+    color: white;
+}
+
+/* Pros container */
+main section:first-child > div:nth-child(2) > div {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+/* Individual pro cards */
+main section:first-child > div:nth-child(2) > div > div {
+    text-align: center;
+    width: 150px;
+}
+
+main section:first-child > div:nth-child(2) > div > div img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    background: #f0f0f0;
+}
+
+main section:first-child > div:nth-child(2) > div > div h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 8px;
+}
+
+main section:first-child > div:nth-child(2) > div > div p {
+    font-size: 0.9rem;
+    color: white;
+    font-style: italic;
+    line-height: 1.3;
+    font-weight: 300;
+}
+
+/* Adjust body to accommodate the extended hero section */
+body {
+    margin: 0;
+    background: #071629;
+}
+
+/* Hide other sections for now since we're only styling the first two */
+main section:nth-child(2),
+main section:nth-child(3),
+main section:nth-child(4),
+main section:nth-child(5),
+main section:nth-child(6) {
+    display: none;
+}
+
+footer {
+    display: none;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    nav {
+        padding: 0 20px;
+    }
+    
+    nav ul {
+        gap: 20px;
+    }
+    
+    main section:first-child h1 {
+        font-size: 80px;
+    }
+    
+    main section:first-child span {
+        font-size: 14px;
+        margin: 0 15px;
+    }
+    
+    main section:first-child > div:nth-child(2) > div {
+        gap: 40px;
+    }
+    
+    main section:first-child > div:nth-child(2) > div > div {
+        width: 120px;
+    }
+    
+    main section:first-child > div:nth-child(2) > div > div img {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media (max-width: 600px) {
+    main section:first-child h1 {
+        font-size: 60px;
+    }
+    
+    main section:first-child span {
+        display: block;
+        margin: 10px 0;
+    }
+    
+    main section:first-child > div:nth-child(2) > div {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+    
+    main section:first-child > div:nth-child(2) h2 {
+        font-size: 28px;
+    }
+    
+    nav ul li a {
+        font-size: 0.8rem;
+    }
+}
