@@ -7,6 +7,8 @@
 
 body {
     font-family: 'Source Sans Pro', sans-serif;
+    margin: 0;
+    background: #071629;
 }
 
 /* Header Styles */
@@ -75,7 +77,7 @@ main section:first-child {
     position: relative;
 }
 
-/* Radial gradient overlay - extends to cover the entire section */
+/* Radial gradient overlay */
 main section:first-child::before {
     content: '';
     position: absolute;
@@ -87,13 +89,11 @@ main section:first-child::before {
     z-index: 1;
 }
 
-/* Ensure content is above the gradient */
 main section:first-child > * {
     position: relative;
     z-index: 2;
 }
 
-/* First div inside first section - Hero Content */
 main section:first-child > div:first-child {
     text-align: center;
     margin-bottom: 60px;
@@ -137,14 +137,11 @@ main section:first-child button:hover {
     box-shadow: 0 4px 25px 0 rgba(194, 113, 255, 0.6);
 }
 
-/* Second div inside first section - Learn from the pros */
 main section:first-child > div:nth-child(2) {
     background: transparent;
     padding: 60px 20px 40px;
     text-align: center;
     width: 100%;
-    position: static;
-    z-index: 2;
     margin-top: 60px;
 }
 
@@ -152,11 +149,9 @@ main section:first-child > div:nth-child(2) h2 {
     font-size: 0;
     font-weight: 300;
     margin-bottom: 60px;
-    letter-spacing: 0px;
     line-height: 100%;
 }
 
-/* Style for "Learn" - bold and purple */
 main section:first-child > div:nth-child(2) h2 span {
     font-size: 32px;
     line-height: 100%;
@@ -167,13 +162,11 @@ main section:first-child > div:nth-child(2) h2 .learn {
     color: #C271FF;
 }
 
-/* Style for "from the pros" - normal weight and white */
 main section:first-child > div:nth-child(2) h2 .from-pros {
     font-weight: 300;
     color: white;
 }
 
-/* Pros container */
 main section:first-child > div:nth-child(2) > div {
     max-width: 1000px;
     margin: 0 auto;
@@ -183,7 +176,6 @@ main section:first-child > div:nth-child(2) > div {
     flex-wrap: wrap;
 }
 
-/* Individual pro cards */
 main section:first-child > div:nth-child(2) > div > div {
     text-align: center;
     width: 150px;
@@ -213,14 +205,48 @@ main section:first-child > div:nth-child(2) > div > div p {
     font-weight: 300;
 }
 
-/* Adjust body to accommodate the extended hero section */
-body {
-    margin: 0;
-    background: #071629;
+/* Testimonial Section (Second Section) */
+main section:nth-child(2) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    background-color: #C271FF;
+    padding: 80px 20px;
+    color: white;
 }
 
-/* Hide other sections for now since we're only styling the first two */
-main section:nth-child(2),
+main section:nth-child(2) > div:first-child img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+main section:nth-child(2) > div:last-child {
+    max-width: 600px;
+}
+
+main section:nth-child(2) blockquote {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+main section:nth-child(2) h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+main section:nth-child(2) p {
+    font-size: 0.9rem;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+/* Hide other sections for now except hero + testimonial */
 main section:nth-child(3),
 main section:nth-child(4),
 main section:nth-child(5),
@@ -262,6 +288,16 @@ footer {
     main section:first-child > div:nth-child(2) > div > div img {
         width: 120px;
         height: 120px;
+    }
+
+    /* Testimonial stacks vertically */
+    main section:nth-child(2) {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    main section:nth-child(2) > div:last-child {
+        max-width: 90%;
     }
 }
 
