@@ -1,5 +1,5 @@
 # Implementing a design from scratch 
-Responsive Web design | HTML | CSS
+**Responsive Web design | HTML | CSS**
 
 ***
 
