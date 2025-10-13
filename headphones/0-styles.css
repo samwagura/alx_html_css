@@ -56,7 +56,7 @@ button {
 
 /* HERO SECTION */
 .hero-section {
-  background-image: url('Assets/Images/background-mobile.jpg');
+  background-image: url('Assets/images/background-mobile.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -118,7 +118,7 @@ button {
   }
   
   .hero-section {
-    background-image: url('Assets/Images/background-tablet.jpg');
+    background-image: url('Assets/images/background-mobile.jpg');
   }
   
   .hero-section .nav-bar .nav-menu {
@@ -160,7 +160,7 @@ button {
   }
   
   .hero-section {
-    background-image: url('Assets/Images/background-desktop.jpg');
+    background-image: url('Assets/images/background.jpg');
   }
   
   .hero-section .hero-content h1 {
