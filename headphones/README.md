@@ -7,5 +7,4 @@ In the project, the task is to implement a design shared through [Figma](https:/
 The idea is to have a mobile-first approach by first creating a version for mobile and then adapting to different screen sizes for desktop and tablet using media queries.
 
 <img width="2800" height="6012" alt="01_headphones_desktop@2x" src="https://github.com/user-attachments/assets/16dfad3c-0293-4280-81d3-28f4458c91e3" />  
-<img width="1536" height="7014" alt="01_headphones_tablet@2x" src="https://github.com/user-attachments/assets/a9fe8b8d-5d80-4d0a-bb75-46fb446868d1" />  
-<img width="750" height="9720" alt="01_headphones_mobile@2x" src="https://github.com/user-attachments/assets/e9d5893d-2006-4eb4-920f-8079ff8c3276" />
+
