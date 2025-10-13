@@ -1,0 +1,225 @@
+/* Removing any initial margins and setting box-sizing */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Setting up global variables */
+:root {
+  --primary-color: #071629;
+  --secondary-color: #FF6565;
+  --light-color: #FFFFFF;
+  --font-family: "Source Sans 3", sans-serif;
+  --cta-btn-border-radius: 22px;
+  --error-color: #ff3333;
+  --success-color: #4CAF50;
+}
+
+body {
+    width: 100%;
+    max-width: 100vw;
+    font-family: var(--font-family);
+    text-align: center;
+    overflow-x: hidden;
+    background-color: var(--light-color);
+    padding: 2em 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+}
+
+/* CONTACT SECTION */
+.contact-us {
+  padding-top: 4em;
+  padding-bottom: 4em;
+  width: 100%;
+  max-width: 600px;
+}
+
+.contact-us h1 {
+  font-size: 32px;
+  color: var(--primary-color);
+  margin-bottom: 2em;
+  font-weight: 700;
+  animation: fadeInDown 0.8s ease-out;
+}
+
+.form-group {
+  margin-bottom: 2em;
+  text-align: left;
+  animation: fadeInUp 0.8s ease-out;
+  animation-fill-mode: both;
+}
+
+.form-group:nth-child(1) { animation-delay: 0.2s; }
+.form-group:nth-child(2) { animation-delay: 0.4s; }
+.form-group:nth-child(3) { animation-delay: 0.6s; }
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  color: var(--primary-color);
+  font-weight: 600;
+  margin-bottom: 0.5em;
+  transition: color 0.3s ease;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 1em;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  font-family: var(--font-family);
+  font-size: 16px;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-bottom: 2px solid var(--secondary-color);
+  transform: translateY(-2px);
+}
+
+.form-group input:focus + .error-message,
+.form-group textarea:focus + .error-message {
+  opacity: 0;
+}
+
+.form-group input:valid,
+.form-group textarea:valid {
+  border-bottom: 2px solid var(--success-color);
+}
+
+.form-group input:invalid:not(:focus):not(:placeholder-shown),
+.form-group textarea:invalid:not(:focus):not(:placeholder-shown) {
+  border-bottom: 2px solid var(--error-color);
+}
+
+.form-group textarea {
+  height: 120px;
+  resize: vertical;
+  min-height: 100px;
+}
+
+.error-message {
+  color: var(--error-color);
+  font-size: 12px;
+  margin-top: 0.5em;
+  display: block;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.form-group input:invalid:not(:focus):not(:placeholder-shown) + .error-message,
+.form-group textarea:invalid:not(:focus):not(:placeholder-shown) + .error-message {
+  opacity: 1;
+}
+
+.call-to-action-btn {
+  margin: auto;
+  margin-top: 2em;
+  border-radius: var(--cta-btn-border-radius);
+  padding: 1em 3em;
+  background-color: var(--secondary-color);
+  color: var(--light-color);
+  font-size: 14px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  animation: fadeInUp 0.8s ease-out 0.8s both;
+}
+
+.call-to-action-btn:hover {
+  background-color: #e05555;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(255, 101, 101, 0.3);
+}
+
+.call-to-action-btn:active {
+  transform: translateY(-1px);
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* TABLET STYLES */
+@media (min-width: 768px) {
+  .container {
+    padding-left: 3em;
+    padding-right: 3em;
+  }
+  
+  .contact-us {
+    padding-top: 6em;
+    padding-bottom: 6em;
+  }
+  
+  .form-group {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .contact-us h1 {
+    font-size: 36px;
+  }
+}
+
+/* DESKTOP STYLES */
+@media (min-width: 1200px) {
+  .container {
+    padding-left: 10em;
+    padding-right: 10em;
+  }
+  
+  .contact-us {
+    padding-top: 8em;
+    padding-bottom: 8em;
+  }
+  
+  .form-group {
+    width: 60%;
+  }
+  
+  .contact-us h1 {
+    font-size: 40px;
+  }
+  
+  .call-to-action-btn {
+    font-size: 16px;
+    padding: 1.2em 4em;
+  }
+}
