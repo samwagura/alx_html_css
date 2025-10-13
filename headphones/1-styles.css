@@ -67,20 +67,9 @@ body {
   max-width: 207px;
 }
 
-.service-icon {
-  width: 92px;
-  height: 92px;
-  border-radius: 50%;
-  background: var(--secondary-color);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.service-item img {
   margin-bottom: 1.5em;
-}
-
-.service-icon img {
-  width: 44px;
-  height: 44px;
+  height: 88px;
 }
 
 .service-item h2 {
