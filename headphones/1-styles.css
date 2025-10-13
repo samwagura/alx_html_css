@@ -1,0 +1,156 @@
+/* Removing any initial margins and setting box-sizing */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Setting up global variables */
+:root {
+  --primary-color: #071629;
+  --secondary-color: #FF6565;
+  --light-color: #FFFFFF;
+  --font-family: "Source Sans 3", sans-serif;
+}
+
+body {
+    width: 100%;
+    max-width: 100vw;
+    font-family: var(--font-family);
+    text-align: center;
+    overflow-x: hidden;
+    background-color: var(--light-color);
+    padding: 2em 0;
+}
+
+.container {
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+}
+
+/* WHAT WE DO SECTION */
+.what-we-do {
+  padding-top: 4em;
+  padding-bottom: 4em;
+}
+
+.what-we-do h1 {
+  font-size: 32px;
+  color: var(--primary-color);
+  margin-bottom: 1em;
+  font-weight: 700;
+}
+
+.section-description {
+  font-size: 16px;
+  color: var(--primary-color);
+  line-height: 26px;
+  margin: auto;
+  margin-bottom: 4em;
+  width: 80%;
+  font-weight: 400;
+}
+
+.services-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 5em;
+  align-items: center;
+}
+
+.service-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 207px;
+}
+
+.service-icon {
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  background: var(--secondary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5em;
+}
+
+.service-icon img {
+  width: 44px;
+  height: 44px;
+}
+
+.service-item h2 {
+  font-size: 18px;
+  color: var(--primary-color);
+  margin-bottom: 1em;
+  font-weight: 700;
+}
+
+.service-item p {
+  font-size: 14px;
+  color: var(--primary-color);
+  line-height: 26px;
+  font-weight: 400;
+}
+
+/* TABLET STYLES */
+@media (min-width: 768px) {
+  .container {
+    padding-left: 3em;
+    padding-right: 3em;
+  }
+  
+  .what-we-do {
+    padding-top: 6em;
+    padding-bottom: 6em;
+  }
+  
+  .services-grid {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3em;
+  }
+  
+  .service-item {
+    width: 45%;
+  }
+  
+  .section-description {
+    width: 70%;
+  }
+}
+
+/* DESKTOP STYLES */
+@media (min-width: 1200px) {
+  .container {
+    padding-left: 10em;
+    padding-right: 10em;
+  }
+  
+  .what-we-do {
+    padding-top: 8em;
+    padding-bottom: 8em;
+  }
+  
+  .services-grid {
+    flex-wrap: nowrap;
+    gap: 2em;
+  }
+  
+  .service-item {
+    width: auto;
+  }
+  
+  .section-description {
+    width: 60%;
+  }
+  
+  .what-we-do h1 {
+    font-size: 36px;
+  }
+}
