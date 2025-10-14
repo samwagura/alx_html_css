@@ -58,7 +58,7 @@ button {
 
 /* HERO SECTION */
 .hero-section {
-  background-image: url('Assets/Images/background/(1/)-mobile.jpg');
+  background-image: url('Assets/Images/background\\(1\)-mobile.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
