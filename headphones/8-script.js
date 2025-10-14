@@ -1,60 +1,68 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const menuToggle = document.getElementById('menuToggle');
-    const navMenu = document.getElementById('navMenu');
-    
-    // Toggle menu function
+    const menuBtn = document.querySelector('.menu-btn');
+    const navMenu = document.querySelector('.nav-menu');
+    const body = document.body;
+
+    // Function to toggle menu
     function toggleMenu() {
-        menuToggle.classList.toggle('active');
-        navMenu.classList.toggle('active');
+        const isMenuOpen = navMenu.classList.contains('active');
         
-        // Prevent body scrolling when menu is open
-        if (navMenu.classList.contains('active')) {
-            document.body.style.overflow = 'hidden';
+        if (isMenuOpen) {
+            // Close menu
+            navMenu.classList.remove('active');
+            menuBtn.classList.remove('active');
+            body.style.overflow = ''; // Enable scrolling
         } else {
-            document.body.style.overflow = '';
+            // Open menu
+            navMenu.classList.add('active');
+            menuBtn.classList.add('active');
+            body.style.overflow = 'hidden'; // Disable scrolling
         }
     }
-    
-    // Event listener for menu toggle
-    menuToggle.addEventListener('click', function(e) {
+
+    // Function to close menu
+    function closeMenu() {
+        navMenu.classList.remove('active');
+        menuBtn.classList.remove('active');
+        body.style.overflow = ''; // Enable scrolling
+    }
+
+    // Toggle menu when hamburger button is clicked
+    menuBtn.addEventListener('click', function(e) {
         e.stopPropagation();
         toggleMenu();
     });
-    
-    // Close menu when clicking on a link
+
+    // Close menu when clicking on navigation links
     const navLinks = document.querySelectorAll('.nav-menu a');
     navLinks.forEach(link => {
         link.addEventListener('click', function() {
-            if (window.innerWidth <= 768) {
-                toggleMenu();
+            if (window.innerWidth <= 480) {
+                closeMenu();
             }
         });
     });
-    
+
     // Close menu when clicking outside
     document.addEventListener('click', function(event) {
-        if (window.innerWidth <= 768 && 
-            navMenu.classList.contains('active') && 
+        if (navMenu.classList.contains('active') && 
             !navMenu.contains(event.target) && 
-            !menuToggle.contains(event.target)) {
-            toggleMenu();
+            !menuBtn.contains(event.target)) {
+            closeMenu();
         }
     });
-    
+
     // Close menu on escape key
     document.addEventListener('keydown', function(event) {
         if (event.key === 'Escape' && navMenu.classList.contains('active')) {
-            toggleMenu();
+            closeMenu();
         }
     });
-    
+
     // Handle window resize
     window.addEventListener('resize', function() {
-        if (window.innerWidth > 768) {
-            // Ensure menu is closed and body scroll is enabled on larger screens
-            menuToggle.classList.remove('active');
-            navMenu.classList.remove('active');
-            document.body.style.overflow = '';
+        if (window.innerWidth > 480 && navMenu.classList.contains('active')) {
+            closeMenu();
         }
     });
 });
