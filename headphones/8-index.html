@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="8-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <title>Headphones - Responsive Menu</title>
+</head>
+<body>
+    <!-- HERO SECTION -->
+     <section class="hero-section container">
+        <nav class="nav-bar">
+            <button class="menu-btn" id="menuToggle">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            <img src="Assets/Images/logo.svg" alt="logo" class="logo">
+            <ul class="nav-menu" id="navMenu">
+                <li>
+                    <a href="#what-we-do">WHAT WE DO</a>
+                </li>
+                <li>
+                    <a href="#our-results">OUR RESULTS</a>
+                </li>
+                <li>
+                    <a href="#contact-us">CONTACT US</a>
+                </li>
+            </ul>
+        </nav>
+        <article class="hero-content">
+            <h1>Lorem ipsum dolor set amet lorem ipsum</h1>
+            <h2>Lorem ipsum dolor set amet lorem ipsum dolor set</h2>
+            <button class="call-to-action-btn">CALL TO ACTION</button>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            </p>
+        </article>
+     </section>
+
+    <!-- WHAT WE DO SECTION -->
+    <section class="what-we-do container" id="what-we-do">
+        <h1>What we do…</h1>
+        <p class="section-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+        <div class="services-grid">
+            <div class="service-item">
+                <img src="Assets/Images/sound-frecuency.svg" alt="sound frequency">
+                <h2>Lorem ipsum</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <div class="service-item">
+                <img src="Assets/Images/video.svg" alt="video">
+                <h2>Lorem ipsum</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <div class="service-item">
+                <img src="Assets/Images/music.svg" alt="music">
+                <h2>Lorem ipsum</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <div class="service-item">
+                <img src="Assets/Images/hearing.svg" alt="hearing">
+                <h2>Lorem ipsum</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- OUR RESULTS SECTION -->
+     <section class="our-results container" id="our-results">
+        <h1>Our results speak for themselves</h1>
+        <p class="section-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+        
+        <div class="pentagons-container">
+            <div class="pentagon">
+                <div class="pentagon-content">
+                    <span class="percentage">+2%</span>
+                    <span class="pentagon-text">Lorem ipsum dolor</span>
+                </div>
+            </div>
+            <div class="pentagon">
+                <div class="pentagon-content">
+                    <span class="percentage">+2%</span>
+                    <span class="pentagon-text">Lorem ipsum dolor</span>
+                </div>
+            </div>
+            <div class="pentagon">
+                <div class="pentagon-content">
+                    <span class="percentage">+2%</span>
+                    <span class="pentagon-text">Lorem ipsum dolor</span>
+                </div>
+            </div>
+            <div class="pentagon">
+                <div class="pentagon-content">
+                    <span class="percentage">+2%</span>
+                    <span class="pentagon-text">Lorem ipsum dolor</span>
+                </div>
+            </div>
+        </div>
+     </section>
+
+    <!-- CONTACT SECTION -->
+     <section class="contact-us container" id="contact-us">
+        <h1>Contact us</h1>
+        <form action="" method="get" id="contactform">
+            <div class="form-group">
+                <label for="fullname">Name</label>
+                <input type="text" id="fullname" name="fullname" placeholder="Your name" required>
+                <span class="error-message">Please enter your name</span>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Your email" required>
+                <span class="error-message">Please enter a valid email address</span>
+            </div>
+            <div class="form-group">
+                <label for="message">Your Message</label>
+                <textarea id="message" name="message" placeholder="Write your message here" required></textarea>
+                <span class="error-message">Please enter your message</span>
+            </div>
+        </form>
+        <button type="submit" form="contactform" value="Submit" class="call-to-action-btn">CALL TO ACTION</button>
+     </section>
+
+    <!-- FOOTER SECTION -->
+     <footer class="container">
+        <div class="footer-content">
+            <img src="Assets/Images/logo.svg" alt="logo" class="footer-logo">
+            <div class="social-icons">
+                <a href="#" class="social-link" aria-label="Facebook">
+                    <img src="Assets/Images/Facebook_White.svg" alt="facebook logo">
+                </a>
+                <a href="#" class="social-link" aria-label="Twitter">
+                    <img src="Assets/Images/Twitter_White.svg" alt="twitter logo">
+                </a>
+                <a href="#" class="social-link" aria-label="Instagram">
+                    <img src="Assets/Images/Instagram_White.svg" alt="instagram logo">
+                </a>
+            </div>
+        </div>
+        <p class="copyright">&copy; headphones2020</p>
+     </footer>
+
+    <script src="8-script.js"></script>
+</body>
+</html>
