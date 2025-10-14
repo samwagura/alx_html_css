@@ -27,7 +27,7 @@ body {
 
 /* Hero Section */
 .hero-section {
-    background-image: url('Assets/Images/headphones_hero_1.jpg');
+    background-image: url('Assets/Images/background.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -188,7 +188,7 @@ body {
 /* Our Results Section */
 .our-results {
     padding: 6rem 0;
-    background-image: url('Assets/Images/headphones_hero_2.jpg');
+    background-image: url('Assets/Images/background \ \(1\).jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
