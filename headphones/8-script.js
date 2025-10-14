@@ -16,29 +16,28 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Event listener for menu toggle
-    menuToggle.addEventListener('click', toggleMenu);
+    menuToggle.addEventListener('click', function(e) {
+        e.stopPropagation();
+        toggleMenu();
+    });
     
     // Close menu when clicking on a link
     const navLinks = document.querySelectorAll('.nav-menu a');
     navLinks.forEach(link => {
         link.addEventListener('click', function() {
-            if (window.innerWidth <= 480) {
-                menuToggle.classList.remove('active');
-                navMenu.classList.remove('active');
-                document.body.style.overflow = '';
+            if (window.innerWidth <= 768) {
+                toggleMenu();
             }
         });
     });
     
     // Close menu when clicking outside
     document.addEventListener('click', function(event) {
-        if (window.innerWidth <= 480) {
-            const isClickInsideMenu = navMenu.contains(event.target);
-            const isClickOnToggle = menuToggle.contains(event.target);
-            
-            if (!isClickInsideMenu && !isClickOnToggle && navMenu.classList.contains('active')) {
-                toggleMenu();
-            }
+        if (window.innerWidth <= 768 && 
+            navMenu.classList.contains('active') && 
+            !navMenu.contains(event.target) && 
+            !menuToggle.contains(event.target)) {
+            toggleMenu();
         }
     });
     
@@ -51,11 +50,53 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Handle window resize
     window.addEventListener('resize', function() {
-        if (window.innerWidth > 480) {
+        if (window.innerWidth > 768) {
             // Ensure menu is closed and body scroll is enabled on larger screens
             menuToggle.classList.remove('active');
             navMenu.classList.remove('active');
             document.body.style.overflow = '';
         }
     });
+    
+    // Form validation
+    const contactForm = document.getElementById('contactform');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            let isValid = true;
+            const inputs = contactForm.querySelectorAll('input, textarea');
+            
+            inputs.forEach(input => {
+                const errorMessage = input.nextElementSibling;
+                
+                if (!input.value.trim()) {
+                    isValid = false;
+                    if (errorMessage && errorMessage.classList.contains('error-message')) {
+                        errorMessage.style.display = 'block';
+                    }
+                } else {
+                    if (errorMessage && errorMessage.classList.contains('error-message')) {
+                        errorMessage.style.display = 'none';
+                    }
+                }
+                
+                // Email validation
+                if (input.type === 'email' && input.value.trim()) {
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(input.value)) {
+                        isValid = false;
+                        if (errorMessage && errorMessage.classList.contains('error-message')) {
+                            errorMessage.style.display = 'block';
+                        }
+                    }
+                }
+            });
+            
+            if (isValid) {
+                alert('Form submitted successfully!');
+                contactForm.reset();
+            }
+        });
+    }
 });
