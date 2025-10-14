@@ -451,7 +451,7 @@ footer {
   }
   
   .our-results {
-    background-image: url('Assets/Images/background\ \(1\)-tablet.jpg');
+    background-image: url('Assets/Images/background\ \(1\)-mobile.jpg');
   }
   
   .pentagons-container {
@@ -481,7 +481,7 @@ footer {
   }
   
   .hero-section {
-    background-image: url('Assets/Images/background-desktop.jpg');
+    background-image: url('Assets/Images/background.jpg');
   }
   
   .nav-menu {
@@ -543,7 +543,7 @@ footer {
   
   /* OUR RESULTS - Desktop Layout */
   .our-results {
-    background-image: url('Assets/Images/background\ \(1\)-desktop.jpg');
+    background-image: url('Assets/Images/background\ \(1\)-mobile.jpg');
     padding-top: 10em;
     padding-bottom: 10em;
   }
